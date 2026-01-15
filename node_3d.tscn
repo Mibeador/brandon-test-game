@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://damk76wbkr05f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.60046214, -0.7996532, 0, 0.7996532, -0.60046214, 0, 0, -1.5347004)
