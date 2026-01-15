@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://blh578th3l4c7"]
+
+[ext_resource type="Texture2D" uid="uid://1xsqogwd16y8" path="res://icon.svg" id="1_v3uhd"]
+[ext_resource type="FontFile" uid="uid://dp0t8hrrg8coj" path="res://fonts/PixelOperator8-Bold.ttf" id="2_ufxs0"]
+[ext_resource type="PackedScene" uid="uid://ciw8fwt5wg3ij" path="res://scenes/player.tscn" id="3_6we3w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6we3w"]
+font = ExtResource("2_ufxs0")
+font_size = 23
+font_color = Color(1, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Level" type="Node2D"]
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(208, 479)
+scale = Vector2(2.0698242, 0.56347644)
+texture = ExtResource("1_v3uhd")
+
+[node name="Name Label" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 376.0
+offset_right = 554.0
+offset_bottom = 405.0
+text = "Brandon Scott"
+label_settings = SubResource("LabelSettings_6we3w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(205, 436)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("3_6we3w")]
+position = Vector2(209, 431)
