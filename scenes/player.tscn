@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciw8fwt5wg3ij"]
+[gd_scene load_steps=9 format=3 uid="uid://ciw8fwt5wg3ij"]
 
 [ext_resource type="Texture2D" uid="uid://d3cqeqdknbdmg" path="res://characters/DinoSprites - mort.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bneqegujabhwc" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("1_3vyb7")
@@ -40,9 +41,10 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 6.0
-height = 20.58
+height = 18.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fjrip")
@@ -52,3 +54,7 @@ frame_progress = 0.32081056
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -19.365)
+zoom = Vector2(4.25, 4.25)

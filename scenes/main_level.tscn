@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://blh578th3l4c7"]
+[gd_scene load_steps=7 format=3 uid="uid://blh578th3l4c7"]
 
 [ext_resource type="Texture2D" uid="uid://1xsqogwd16y8" path="res://icon.svg" id="1_v3uhd"]
 [ext_resource type="FontFile" uid="uid://dp0t8hrrg8coj" path="res://fonts/PixelOperator8-Bold.ttf" id="2_ufxs0"]
 [ext_resource type="PackedScene" uid="uid://ciw8fwt5wg3ij" path="res://scenes/player.tscn" id="3_6we3w"]
+[ext_resource type="TileSet" uid="uid://b0somvvapsjkc" path="res://tilesets/basic-dino-tiles.tres" id="4_qmak7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6we3w"]
+size = Vector2(127.54706, 124.22876)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6we3w"]
 font = ExtResource("2_ufxs0")
@@ -11,12 +15,18 @@ font_color = Color(1, 0, 0, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Main Level" type="Node2D"]
+[node name="Test Level" type="Node2D"]
 
 [node name="Floor" type="Sprite2D" parent="."]
-position = Vector2(208, 479)
+position = Vector2(208.99998, 478)
 scale = Vector2(2.0698242, 0.56347644)
 texture = ExtResource("1_v3uhd")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+shape = SubResource("RectangleShape2D_6we3w")
 
 [node name="Name Label" type="Label" parent="."]
 offset_left = 64.0
@@ -32,3 +42,7 @@ zoom = Vector2(4, 4)
 
 [node name="Player" parent="." instance=ExtResource("3_6we3w")]
 position = Vector2(209, 431)
+
+[node name="Midground" type="TileMapLayer" parent="."]
+z_index = -1
+tile_set = ExtResource("4_qmak7")
