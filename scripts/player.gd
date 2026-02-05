@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
-
+var last_direction : float
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,4 +23,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	#Flip sprite based on input
+	if direction > 0:
+		animated_sprite_2d.flip_h = false
+	if direction < 0:
+		animated_sprite_2d.flip_h = true
+
+
 	move_and_slide()
+	handle_animation()
+
+#animation setting
+func handle_animation() -> void:
+	if is_on_floor() and last_direction == 0:
+		animated_sprite_2d.play("idle")
+	elif is_on_floor() and last_direction != 0:
+		animated_sprite_2d.play("run")
+	else:
+		animated_sprite_2d.play("jump")
+	
