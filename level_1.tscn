@@ -1152,9 +1152,6 @@ position = Vector2(2048, 192)
 [node name="Coin12" parent="Coins" instance=ExtResource("7_j7kpp")]
 position = Vector2(1872, 192)
 
-[node name="Coin13" parent="Coins" instance=ExtResource("7_j7kpp")]
-position = Vector2(1840, 168)
-
 [node name="Coin14" parent="Coins" instance=ExtResource("7_j7kpp")]
 position = Vector2(1776, 184)
 
