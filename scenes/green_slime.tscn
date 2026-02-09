@@ -103,25 +103,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pvn7"]
-size = Vector2(12, 7)
+size = Vector2(14, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boo2g"]
-size = Vector2(8, 3.5)
+size = Vector2(10, 4)
 
 [node name="Green_Slime" type="Node2D"]
 script = ExtResource("1_0pvn7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4q1p6")
-animation = &"death_sprites"
+animation = &"slime_walk"
 autoplay = "slime_walk"
-frame_progress = 0.9749949
 
 [node name="Killzone" parent="." instance=ExtResource("2_tuic5")]
 collision_mask = 2
 
 [node name="KillBox" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 3.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0pvn7")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -135,8 +134,9 @@ collision_mask = 2
 script = ExtResource("4_4q1e0")
 
 [node name="slimehead" type="CollisionShape2D" parent="StompBox"]
-position = Vector2(0, -2.25)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_boo2g")
 
 [connection signal="body_entered" from="Killzone" to="StompBox" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="StompBox" to="." method="_on_stomp_box_body_entered"]
+[connection signal="body_entered" from="StompBox" to="Killzone" method="_on_stomp_box_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp5sp1y06b42u"]
+
+[ext_resource type="FontFile" uid="uid://dp0t8hrrg8coj" path="res://fonts/PixelOperator8-Bold.ttf" id="1_jg0sh"]
+[ext_resource type="Script" uid="uid://4ncreds44wpy" path="res://scripts/main_menu.gd" id="1_tgkk4"]
+[ext_resource type="FontFile" uid="uid://dpy8cpekibe6c" path="res://fonts/PixelOperator8.ttf" id="2_tgkk4"]
+
+[sub_resource type="Theme" id="Theme_xqcya"]
+default_font = ExtResource("2_tgkk4")
+
+[node name="MainMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgkk4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jg0sh")
+theme_override_font_sizes/font_size = 40
+text = "Dino Dogshit"
+
+[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tgkk4")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xqcya")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tgkk4")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

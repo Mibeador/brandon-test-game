@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Brandon Scott Test Game"
-run/main_scene="uid://bdp342n3ernds"
+run/main_scene="uid://cp5sp1y06b42u"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Level01Bgm="*res://scenes/level_01_bgm.tscn"
 
 [debug]
 

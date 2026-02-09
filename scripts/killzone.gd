@@ -12,3 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
+
+
+func _on_stomp_box_body_entered(body: Node2D) -> void:
+	queue_free()

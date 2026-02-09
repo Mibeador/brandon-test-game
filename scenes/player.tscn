@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciw8fwt5wg3ij"]
+[gd_scene load_steps=17 format=3 uid="uid://ciw8fwt5wg3ij"]
 
 [ext_resource type="Texture2D" uid="uid://d3cqeqdknbdmg" path="res://characters/DinoSprites - mort.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bneqegujabhwc" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://br11px8won77e" path="res://scenes/ui_scenes/coin_ui.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("1_3vyb7")
@@ -108,9 +109,8 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.17146654
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g2els")
@@ -119,3 +119,9 @@ shape = SubResource("CapsuleShape2D_g2els")
 offset = Vector2(0, -19.365)
 zoom = Vector2(4.25, 4.25)
 limit_bottom = 400
+
+[node name="CoinUI" parent="." instance=ExtResource("3_qhqgy")]
+offset_left = -135.0
+offset_top = -96.0
+offset_right = -61.0
+offset_bottom = -73.0
